@@ -1,0 +1,33 @@
+<resources>
+
+    <string name="app_name">Simple Weather</string>
+    <string name="change_city">Change city</string>
+
+    <!-- Put your own APP ID here -->
+    <string name="open_weather_maps_app_id">fc4229f53757d3a4e0ff646c46e8f506</string>
+
+    <string name="day_thunderstorm">&#xf010;</string>
+    <string name="night_thunderstorm">&#xf02d;</string>
+    <string name="day_drizzle">&#xf00b;</string>
+    <string name="night_drizzle">&#xf02b;</string>
+    <string name="day_rain">&#xf008;</string>
+    <string name="night_rain">&#xf028;</string>
+    <string name="day_snow">&#xf00a;</string>
+    <string name="night_snow">&#xf02a;</string>
+    <string name="day_fog">&#xf003;</string>
+    <string name="night_fog">&#xf04a;</string>
+    <string name="dust">&#xf021;</string>
+    <string name="tornado">&#xf056;</string>
+    <string name="day_clear">&#xf00d;</string>
+    <string name="night_clear">&#xf02e;</string>
+    <string name="day_cloudy">&#xf002;</string>
+    <string name="night_cloudy">&#xf031;</string>
+    <string name="storm">&#xf01e;</string>
+    <string name="wind">&#xf050;</string>
+    <string name="hot">&#xf046;</string>
+    <string name="hail">&#xf015;</string>
+
+    <string name="place_not_found">Sorry, no weather data found.</string>
+
+</resources>
+
