@@ -72,6 +72,9 @@ public class MainActivity extends ActionBarActivity {
 
             }
         }
+        if(b[i-1]){
+            view.setBackgroundColor(Color.DKGRAY);
+        }
 
 
 
