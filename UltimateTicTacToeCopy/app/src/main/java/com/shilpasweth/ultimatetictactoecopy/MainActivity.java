@@ -8,6 +8,7 @@ import android.graphics.Paint;
 import android.graphics.Point;
 import android.graphics.Typeface;
 import android.nfc.Tag;
+import android.os.CountDownTimer;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
 import android.view.Display;
@@ -19,20 +20,26 @@ import android.widget.TextView;
 import android.widget.Toast;
 import android.widget.ToggleButton;
 
+import java.util.Random;
+
 
 public class MainActivity extends ActionBarActivity {
 
 
-    int p=1;
+    int p=0;
     int pm=0;
     int w1=0;
     int w2=0;
     int sc1=0;
     int sc2=0;
     int flag=0;
+    boolean started=false;
+    boolean timechange=false;
+    long ticktock;
     String tag[][]= new String[9][9];
     boolean [][] no = new boolean[9][9];
     boolean[] b={false,false,false,false,false,false,false,false,false};
+    CountDown timer;
 
     public void invalid(View view,boolean on,int i){
         //String text=view.getText().toString;
@@ -81,12 +88,55 @@ public class MainActivity extends ActionBarActivity {
 
     }
 
+    public class CountDown extends CountDownTimer {
+        public CountDown(long startTime, long interval){
+            super(startTime,interval);
+        }
+
+        @Override
+        public void onFinish(){
+            int ch=0;
+            View viewt;
+            Random r = new Random();
+            while(ch==0){
+                int random = 1+r.nextInt(9);
+                if(pm==0){
+                    int random1=1+r.nextInt(9);
+                    pm=random1;
+                }
+                viewt = findViewById(getResources().getIdentifier("t" + pm + random, "id", getPackageName()));
+                if(!(((ToggleButton) viewt).isChecked())){
+                    ((ToggleButton) viewt).setChecked(true);
+                    click(viewt);
+                    ch=1;
+                }
+            }
+
+
+
+
+
+        }
+
+        @Override
+        public void onTick(long millisUntilFinished){
+            ticktock=millisUntilFinished;
+            int size;
+            ((TextView)findViewById(R.id.HurryUp)).setText("Hurry Up : "+millisUntilFinished/1000);
+            //((TextView)findViewById(R.id.Player1)).setText(
+            //size=(findViewById(R.id.bigtime)).getMinimumWidth();
+            (findViewById(R.id.smalltime)).setMinimumWidth((int)ticktock*700/10000);
+        }
+
+    }
+
 
 
     ImageView drawingImageView;
 
     @Override
     public void onSaveInstanceState(Bundle savedInstanceState) {
+
         savedInstanceState.putInt("pc", p);
         savedInstanceState.putInt("pmc", pm);
         savedInstanceState.putInt("w1c", w1);
@@ -102,7 +152,7 @@ public class MainActivity extends ActionBarActivity {
         savedInstanceState.putStringArray("tag5", tag[5]);
         savedInstanceState.putStringArray("tag6", tag[6]);
         savedInstanceState.putStringArray("tag7", tag[7]);
-        savedInstanceState.putStringArray("tag8",tag[8]);
+        savedInstanceState.putStringArray("tag8", tag[8]);
         savedInstanceState.putBooleanArray("no0", no[0]);
         savedInstanceState.putBooleanArray("no1", no[1]);
         savedInstanceState.putBooleanArray("no2", no[2]);
@@ -112,6 +162,10 @@ public class MainActivity extends ActionBarActivity {
         savedInstanceState.putBooleanArray("no6", no[6]);
         savedInstanceState.putBooleanArray("no7", no[7]);
         savedInstanceState.putBooleanArray("no8", no[8]);
+        savedInstanceState.putLong("ticktockc", ticktock);
+
+        timer.cancel();
+
 
 
     }
@@ -148,6 +202,12 @@ public class MainActivity extends ActionBarActivity {
         no[6]=savedInstanceState.getBooleanArray("no6");
         no[7]=savedInstanceState.getBooleanArray("no7");
         no[8]=savedInstanceState.getBooleanArray("no8");
+        ticktock=savedInstanceState.getLong("ticktockc");
+        timer= new CountDown(ticktock, 1000);
+        timer.start();
+        timechange=true;
+        started=true;
+
         ((TextView)findViewById(R.id.Player1)).setText("Player 1 : " + Integer.toString(sc1));
         ((TextView)findViewById(R.id.Player2)).setText("Player 2 : " + Integer.toString(sc2));
         for(int i=1;i<10;i++){
@@ -167,6 +227,8 @@ public class MainActivity extends ActionBarActivity {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        timer= new CountDown(10000, 1000);
+
         ((TextView)findViewById(R.id.Player1)).setText("Player 1 : " + Integer.toString(sc1));
         ((TextView)findViewById(R.id.Player2)).setText("Player 2 : " + Integer.toString(sc2));
         /*Display display = getWindowManager().getDefaultDisplay();
@@ -235,6 +297,20 @@ public class MainActivity extends ActionBarActivity {
 
 
          else {
+             p++;
+             if(p==3){
+                 p-=2;
+             }
+             if(started){
+                 timer.cancel();
+                 started=false;
+                 if(timechange){
+                     timer= new CountDown(10000, 1000);
+                 }
+             }
+             timer.start();
+             started=true;
+
              choose(view,row);
                  view.setTag(p);
                  tag[row-1][column-1]=(view.getTag()).toString();
@@ -327,10 +403,7 @@ public class MainActivity extends ActionBarActivity {
                          }
                      }
                  }
-                 p++;
-                 if(p==3){
-                     p-=2;
-                 }
+
              }
 
      }
@@ -368,11 +441,13 @@ public class MainActivity extends ActionBarActivity {
         w1=0;
         w2=0;
         pm=0;
-        p=1;
+        p=0;
+        timer.cancel();
+        ((TextView)findViewById(R.id.HurryUp)).setText("BEGIN ");
         for(int i=1;i<10;i++){
             for(int j=1;j<10;j++){
                 view=findViewById(getResources().getIdentifier("t" + i + j, "id", getPackageName()));
-                ((ToggleButton) view).setBackgroundColor(Color.LTGRAY);
+                ((ToggleButton) view).setBackgroundColor(Color.parseColor("#ffd9d9d9"));
                 ((ToggleButton) view).setEnabled(true);
                 ((ToggleButton) view).setText(" ");
                 ((ToggleButton) view).setTag(null);

@@ -13,7 +13,6 @@
         android:minWidth="35dp"
         android:minHeight="35dp"
         android:background="#4eff00fb"
-        android:onClick="click"
         android:layout_above="@+id/tableLayout5"
         android:layout_alignLeft="@+id/tableLayout4"
         android:layout_alignStart="@+id/tableLayout4"
@@ -25,8 +24,7 @@
             android:layout_height="wrap_content"
             android:minWidth="35dp"
             android:minHeight="35dp"
-            android:background="#7ccdcdcd"
-            android:onClick="click">
+            android:background="#7ccdcdcd">
 
             <ToggleButton
                 style="?android:attr/buttonStyleSmall"
@@ -80,8 +78,7 @@
             android:layout_height="wrap_content"
             android:minWidth="35dp"
             android:minHeight="35dp"
-            android:background="#7ccdcdcd"
-            android:onClick="click">
+            android:background="#7ccdcdcd">
 
             <ToggleButton
                 style="?android:attr/buttonStyleSmall"
@@ -135,8 +132,7 @@
             android:layout_height="wrap_content"
             android:minWidth="35dp"
             android:minHeight="35dp"
-            android:background="#7ccdcdcd"
-            android:onClick="click">
+            android:background="#7ccdcdcd">
 
             <ToggleButton
                 style="?android:attr/buttonStyleSmall"
@@ -190,7 +186,6 @@
         android:minWidth="35dp"
         android:minHeight="35dp"
         android:background="#4eff00fb"
-        android:onClick="click"
         android:layout_above="@+id/tableLayout5"
         android:layout_alignLeft="@+id/tableLayout8"
         android:layout_alignStart="@+id/tableLayout5"
@@ -201,8 +196,7 @@
             android:layout_height="wrap_content"
             android:minWidth="35dp"
             android:minHeight="35dp"
-            android:background="#7ccdcdcd"
-            android:onClick="click">
+            android:background="#7ccdcdcd">
 
             <ToggleButton
                 style="?android:attr/buttonStyleSmall"
@@ -253,8 +247,7 @@
             android:layout_height="wrap_content"
             android:minWidth="35dp"
             android:minHeight="35dp"
-            android:background="#7ccdcdcd"
-            android:onClick="click">
+            android:background="#7ccdcdcd">
 
             <ToggleButton
                 style="?android:attr/buttonStyleSmall"
@@ -308,8 +301,7 @@
             android:layout_height="wrap_content"
             android:minWidth="35dp"
             android:minHeight="35dp"
-            android:background="#7ccdcdcd"
-            android:onClick="click">
+            android:background="#7ccdcdcd">
 
             <ToggleButton
                 style="?android:attr/buttonStyleSmall"
@@ -363,7 +355,6 @@
         android:minHeight="35dp"
         android:id="@+id/tableLayout3"
         android:background="#4eff00fb"
-        android:onClick="click"
         android:layout_above="@+id/tableLayout5"
         android:layout_alignLeft="@+id/tableLayout6"
         android:layout_alignStart="@+id/tableLayout6"
@@ -375,7 +366,7 @@
             android:minWidth="35dp"
             android:minHeight="35dp"
             android:background="#7ccdcdcd"
-            android:onClick="click">
+            android:nestedScrollingEnabled="false">
 
             <ToggleButton
                 style="?android:attr/buttonStyleSmall"
@@ -426,8 +417,7 @@
             android:layout_height="wrap_content"
             android:minWidth="35dp"
             android:minHeight="35dp"
-            android:background="#7ccdcdcd"
-            android:onClick="click">
+            android:background="#7ccdcdcd">
 
             <ToggleButton
                 style="?android:attr/buttonStyleSmall"
@@ -481,8 +471,7 @@
             android:layout_height="wrap_content"
             android:minWidth="35dp"
             android:minHeight="35dp"
-            android:background="#7ccdcdcd"
-            android:onClick="click">
+            android:background="#7ccdcdcd">
 
             <ToggleButton
                 style="?android:attr/buttonStyleSmall"
@@ -536,7 +525,6 @@
         android:minWidth="35dp"
         android:minHeight="35dp"
         android:background="#4eff00fb"
-        android:onClick="click"
         android:layout_above="@+id/tableLayout8"
         android:layout_alignLeft="@+id/tableLayout7"
         android:layout_alignStart="@+id/tableLayout7"
@@ -547,8 +535,7 @@
             android:layout_height="wrap_content"
             android:minWidth="35dp"
             android:minHeight="35dp"
-            android:background="#7ccdcdcd"
-            android:onClick="click">
+            android:background="#7ccdcdcd">
 
             <ToggleButton
                 style="?android:attr/buttonStyleSmall"
@@ -599,8 +586,7 @@
             android:layout_height="wrap_content"
             android:minWidth="35dp"
             android:minHeight="35dp"
-            android:background="#7ccdcdcd"
-            android:onClick="click">
+            android:background="#7ccdcdcd">
 
             <ToggleButton
                 style="?android:attr/buttonStyleSmall"
@@ -654,8 +640,7 @@
             android:layout_height="wrap_content"
             android:minWidth="35dp"
             android:minHeight="35dp"
-            android:background="#7ccdcdcd"
-            android:onClick="click">
+            android:background="#7ccdcdcd">
 
             <ToggleButton
                 style="?android:attr/buttonStyleSmall"
@@ -710,7 +695,6 @@
         android:minHeight="35dp"
         android:focusableInTouchMode="false"
         android:background="#4eff00fb"
-        android:onClick="click"
         android:layout_above="@+id/tableLayout8"
         android:layout_alignLeft="@+id/tableLayout8"
         android:layout_alignStart="@+id/tableLayout8"
@@ -721,8 +705,7 @@
             android:layout_height="wrap_content"
             android:minWidth="35dp"
             android:minHeight="35dp"
-            android:background="#7ccdcdcd"
-            android:onClick="click">
+            android:background="#7ccdcdcd">
 
             <ToggleButton
                 style="?android:attr/buttonStyleSmall"
@@ -773,8 +756,7 @@
             android:layout_height="wrap_content"
             android:minWidth="35dp"
             android:minHeight="35dp"
-            android:background="#7ccdcdcd"
-            android:onClick="click">
+            android:background="#7ccdcdcd">
 
             <ToggleButton
                 style="?android:attr/buttonStyleSmall"
@@ -828,8 +810,7 @@
             android:layout_height="wrap_content"
             android:minWidth="35dp"
             android:minHeight="35dp"
-            android:background="#7ccdcdcd"
-            android:onClick="click">
+            android:background="#7ccdcdcd">
 
             <ToggleButton
                 style="?android:attr/buttonStyleSmall"
@@ -883,7 +864,6 @@
         android:minHeight="35dp"
         android:id="@+id/tableLayout6"
         android:background="#4eff00fb"
-        android:onClick="click"
         android:layout_above="@+id/tableLayout8"
         android:layout_alignLeft="@+id/tableLayout9"
         android:layout_alignStart="@+id/tableLayout9"
@@ -894,8 +874,7 @@
             android:layout_height="wrap_content"
             android:minWidth="35dp"
             android:minHeight="35dp"
-            android:background="#7ccdcdcd"
-            android:onClick="click">
+            android:background="#7ccdcdcd">
 
             <ToggleButton
                 style="?android:attr/buttonStyleSmall"
@@ -946,8 +925,7 @@
             android:layout_height="wrap_content"
             android:minWidth="35dp"
             android:minHeight="35dp"
-            android:background="#7ccdcdcd"
-            android:onClick="click">
+            android:background="#7ccdcdcd">
 
             <ToggleButton
                 style="?android:attr/buttonStyleSmall"
@@ -1001,8 +979,7 @@
             android:layout_height="wrap_content"
             android:minWidth="35dp"
             android:minHeight="35dp"
-            android:background="#7ccdcdcd"
-            android:onClick="click">
+            android:background="#7ccdcdcd">
 
             <ToggleButton
                 style="?android:attr/buttonStyleSmall"
@@ -1056,7 +1033,6 @@
         android:minWidth="35dp"
         android:minHeight="35dp"
         android:background="#4eff00fb"
-        android:onClick="click"
         android:layout_alignParentBottom="true"
         android:layout_toLeftOf="@+id/tableLayout8"
         android:layout_toStartOf="@+id/tableLayout8"
@@ -1068,8 +1044,7 @@
             android:layout_height="wrap_content"
             android:minWidth="35dp"
             android:minHeight="35dp"
-            android:background="#7ccdcdcd"
-            android:onClick="click">
+            android:background="#7ccdcdcd">
 
             <ToggleButton
                 style="?android:attr/buttonStyleSmall"
@@ -1120,8 +1095,7 @@
             android:layout_height="wrap_content"
             android:minWidth="35dp"
             android:minHeight="35dp"
-            android:background="#7ccdcdcd"
-            android:onClick="click">
+            android:background="#7ccdcdcd">
 
             <ToggleButton
                 style="?android:attr/buttonStyleSmall"
@@ -1175,8 +1149,7 @@
             android:layout_height="wrap_content"
             android:minWidth="35dp"
             android:minHeight="35dp"
-            android:background="#7ccdcdcd"
-            android:onClick="click">
+            android:background="#7ccdcdcd">
 
             <ToggleButton
                 style="?android:attr/buttonStyleSmall"
@@ -1231,7 +1204,6 @@
         android:minWidth="35dp"
         android:minHeight="35dp"
         android:background="#4eff00fb"
-        android:onClick="click"
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true">
 
@@ -1240,8 +1212,7 @@
             android:layout_height="wrap_content"
             android:minWidth="35dp"
             android:minHeight="35dp"
-            android:background="#7ccdcdcd"
-            android:onClick="click">
+            android:background="#7ccdcdcd">
 
             <ToggleButton
                 style="?android:attr/buttonStyleSmall"
@@ -1292,8 +1263,7 @@
             android:layout_height="wrap_content"
             android:minWidth="35dp"
             android:minHeight="35dp"
-            android:background="#7ccdcdcd"
-            android:onClick="click">
+            android:background="#7ccdcdcd">
 
             <ToggleButton
                 style="?android:attr/buttonStyleSmall"
@@ -1347,8 +1317,7 @@
             android:layout_height="wrap_content"
             android:minWidth="35dp"
             android:minHeight="35dp"
-            android:background="#7ccdcdcd"
-            android:onClick="click">
+            android:background="#7ccdcdcd">
 
             <ToggleButton
                 style="?android:attr/buttonStyleSmall"
@@ -1402,7 +1371,6 @@
         android:minHeight="35dp"
         android:id="@+id/tableLayout9"
         android:background="#4eff00fb"
-        android:onClick="click"
         android:layout_alignParentBottom="true"
         android:layout_toRightOf="@+id/tableLayout8"
         android:layout_toEndOf="@+id/tableLayout8"
@@ -1414,8 +1382,7 @@
             android:layout_height="wrap_content"
             android:minWidth="35dp"
             android:minHeight="35dp"
-            android:background="#7ccdcdcd"
-            android:onClick="click">
+            android:background="#7ccdcdcd">
 
             <ToggleButton
                 style="?android:attr/buttonStyleSmall"
@@ -1466,8 +1433,7 @@
             android:layout_height="wrap_content"
             android:minWidth="35dp"
             android:minHeight="35dp"
-            android:background="#7ccdcdcd"
-            android:onClick="click">
+            android:background="#7ccdcdcd">
 
             <ToggleButton
                 style="?android:attr/buttonStyleSmall"
@@ -1521,8 +1487,7 @@
             android:layout_height="wrap_content"
             android:minWidth="35dp"
             android:minHeight="35dp"
-            android:background="#7ccdcdcd"
-            android:onClick="click">
+            android:background="#7ccdcdcd">
 
             <ToggleButton
                 style="?android:attr/buttonStyleSmall"
@@ -1575,7 +1540,7 @@
         android:layout_height="wrap_content"
         android:minWidth="3dp"
         android:minHeight="282dp"
-        android:background="#ffffa104"
+        android:background="#ff0012ff"
         android:maxWidth="3dp"
         android:layout_alignBottom="@+id/tableLayout8"
         android:layout_below="@+id/Reset"
@@ -1588,7 +1553,7 @@
         android:layout_height="wrap_content"
         android:minWidth="3dp"
         android:minHeight="282dp"
-        android:background="#ffffa104"
+        android:background="#ff0012ff"
         android:layout_alignParentBottom="true"
         android:layout_toEndOf="@+id/tableLayout1"
         android:maxWidth="3dp"
@@ -1603,7 +1568,7 @@
         android:layout_height="wrap_content"
         android:minWidth="282dp"
         android:minHeight="3dp"
-        android:background="#ffffa104"
+        android:background="#ff0012ff"
         android:layout_above="@+id/tableLayout4"
         android:layout_centerHorizontal="true" />
 
@@ -1613,7 +1578,7 @@
         android:layout_height="wrap_content"
         android:minWidth="282dp"
         android:minHeight="3dp"
-        android:background="#ffffa104"
+        android:background="#ff0012ff"
         android:layout_above="@+id/tableLayout7"
         android:layout_alignLeft="@+id/imageView3"
         android:layout_alignStart="@+id/imageView3" />
@@ -1649,6 +1614,39 @@
         android:id="@+id/Reset"
         android:onClick="resetgame"
         android:layout_above="@+id/tableLayout2"
-        android:layout_centerHorizontal="true" />
+        android:layout_centerHorizontal="true"
+        android:textStyle="bold"
+        android:textColor="#ffffa000" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:id="@+id/HurryUp"
+        android:layout_above="@+id/Reset"
+        android:layout_centerHorizontal="true"
+        android:text="BEGIN"
+        android:textStyle="bold" />
+
+    <ImageView
+        android:id="@+id/bigtime"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:minWidth="282dp"
+        android:minHeight="12dp"
+        android:background="#49000000"
+        android:layout_above="@+id/HurryUp"
+        android:layout_centerHorizontal="true"
+        android:layout_alignLeft="@+id/tableLayout1"
+        android:layout_alignRight="@+id/tableLayout3" />
+
+    <ImageView
+        android:id="@+id/smalltime"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:minHeight="12dp"
+        android:background="#fffff305"
+        android:layout_above="@+id/HurryUp"
+        android:layout_alignLeft="@+id/bigtime" />
 
 </RelativeLayout>
