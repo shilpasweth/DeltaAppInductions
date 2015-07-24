@@ -122,10 +122,13 @@ public class MainActivity extends ActionBarActivity {
         public void onTick(long millisUntilFinished){
             ticktock=millisUntilFinished;
             int size;
+            //size=(findViewById(R.id.bigtime)).getLayoutParams().width;
+            size=(findViewById(R.id.bigtime)).getWidth();
             ((TextView)findViewById(R.id.HurryUp)).setText("Hurry Up : "+millisUntilFinished/1000);
             //((TextView)findViewById(R.id.Player1)).setText(
-            //size=(findViewById(R.id.bigtime)).getMinimumWidth();
-            (findViewById(R.id.smalltime)).setMinimumWidth((int)ticktock*700/10000);
+
+
+            (findViewById(R.id.smalltime)).setMinimumWidth((int)((float)((int)ticktock*size)/10000.0));
         }
 
     }
@@ -207,6 +210,10 @@ public class MainActivity extends ActionBarActivity {
         timer.start();
         timechange=true;
         started=true;
+        if(pm!=0){
+            view = findViewById(getResources().getIdentifier("tableLayout" + pm, "id", getPackageName()));
+            view.setBackgroundColor(Color.parseColor("#ff0012ff"));
+        }
 
         ((TextView)findViewById(R.id.Player1)).setText("Player 1 : " + Integer.toString(sc1));
         ((TextView)findViewById(R.id.Player2)).setText("Player 2 : " + Integer.toString(sc2));
@@ -217,6 +224,15 @@ public class MainActivity extends ActionBarActivity {
                 invalid(view,!no[i-1][j-1],i);
 
             }
+        }
+        if(p%2==0){
+
+            ((TextView)findViewById(R.id.Player1)).setBackgroundColor(Color.parseColor("#7fff0000"));
+            ((TextView)findViewById(R.id.Player2)).setBackgroundColor(Color.TRANSPARENT);
+        }
+        else{
+            ((TextView)findViewById(R.id.Player1)).setBackgroundColor(Color.TRANSPARENT);
+            ((TextView)findViewById(R.id.Player2)).setBackgroundColor(Color.parseColor("#7f00ff19"));
         }
 
 
@@ -231,6 +247,8 @@ public class MainActivity extends ActionBarActivity {
 
         ((TextView)findViewById(R.id.Player1)).setText("Player 1 : " + Integer.toString(sc1));
         ((TextView)findViewById(R.id.Player2)).setText("Player 2 : " + Integer.toString(sc2));
+        ((TextView)findViewById(R.id.Player1)).setBackgroundColor(Color.parseColor("#7fff0000"));
+        ((TextView)findViewById(R.id.Player2)).setBackgroundColor(Color.TRANSPARENT);
         /*Display display = getWindowManager().getDefaultDisplay();
         Point size = new Point();
         display.getSize(size);
@@ -263,7 +281,7 @@ public class MainActivity extends ActionBarActivity {
          int diag=0;
          flag=0;
 
-         View view1=null,view2=null,view3=null,view4=null,view5=null,view6=null,view7=null,view8=null,view9=null;
+         View view1=null,view2=null,view3=null,view4=null,view5=null,view6=null,view7=null,view8=null,view9=null,viewp=null;
          on = ((ToggleButton) view).isChecked();
 
          for (i = 1; i < 10; i++) {
@@ -293,7 +311,7 @@ public class MainActivity extends ActionBarActivity {
 
          if ((pm != row && pm != 0) ||!on) {
                  invalid(view, on, row);
-             }
+         }
 
 
          else {
@@ -301,6 +319,24 @@ public class MainActivity extends ActionBarActivity {
              if(p==3){
                  p-=2;
              }
+
+             if(pm!=0) {
+                 viewp = findViewById(getResources().getIdentifier("tableLayout" + pm, "id", getPackageName()));
+                 viewp.setBackgroundColor(Color.parseColor("#4eff00fb"));
+             }
+             pm=column;
+
+             if(!b[pm-1]) {
+                 viewp = findViewById(getResources().getIdentifier("tableLayout" + pm, "id", getPackageName()));
+                 viewp.setBackgroundColor(Color.parseColor("#ff0012ff"));
+             }
+
+             if (b[pm-1]){
+                 pm=0;
+                 /*view7 = findViewById(getResources().getIdentifier("tableLayout" + column, "id", getPackageName()));
+                 view7.setBackgroundColor(Color.parseColor("#ff0012ff"));*/
+             }
+
              if(started){
                  timer.cancel();
                  started=false;
@@ -308,17 +344,14 @@ public class MainActivity extends ActionBarActivity {
                      timer= new CountDown(10000, 1000);
                  }
              }
-             timer.start();
-             started=true;
+                 timer.start();
+                 started=true;
 
-             choose(view,row);
+                 choose(view, row);
                  view.setTag(p);
                  tag[row-1][column-1]=(view.getTag()).toString();
                  no[row-1][column-1]=on;
-                 pm = column;
-                 if (b[pm-1]){
-                     pm=0;
-                 }
+
 
                  r = column % 3;
                  if (r == 0) {
@@ -384,6 +417,7 @@ public class MainActivity extends ActionBarActivity {
                  }
                  if (diag==1) {
                      block(row,column);
+
                      if (p % 2 == 0) {
                          w2++;
                          if (w2 == 3) {
@@ -405,6 +439,11 @@ public class MainActivity extends ActionBarActivity {
                  }
 
              }
+         /*if(diag==0){
+             pm=column;
+             }*/
+
+
 
      }
 
@@ -415,12 +454,17 @@ public class MainActivity extends ActionBarActivity {
         ((TextView)findViewById(R.id.Player1)).setText("Player 1 : " + Integer.toString(sc1));
         ((TextView)findViewById(R.id.Player2)).setText("Player 2 : " + Integer.toString(sc2));
 
+
     }
 
     public void block(int i,int k){
-        View view;
+        View view,viewp;
         b[i-1]=true;
+
+
         if(i==k){
+            viewp = findViewById(getResources().getIdentifier("tableLayout" + i, "id", getPackageName()));
+            viewp.setBackgroundColor(Color.parseColor("#4eff00fb"));
             pm=0;
         }
 
@@ -440,11 +484,19 @@ public class MainActivity extends ActionBarActivity {
         View view;
         w1=0;
         w2=0;
+        for(int i=1;i<10;i++) {
+            view = findViewById(getResources().getIdentifier("tableLayout" + i, "id", getPackageName()));
+            view.setBackgroundColor(Color.parseColor("#4eff00fb"));
+        }
+
         pm=0;
         p=0;
         timer.cancel();
         ((TextView)findViewById(R.id.HurryUp)).setText("BEGIN ");
+        ((TextView)findViewById(R.id.Player1)).setBackgroundColor(Color.parseColor("#7fff0000"));
+        ((TextView)findViewById(R.id.Player2)).setBackgroundColor(Color.TRANSPARENT);
         for(int i=1;i<10;i++){
+            b[i-1]=false;//#ffff00fb
             for(int j=1;j<10;j++){
                 view=findViewById(getResources().getIdentifier("t" + i + j, "id", getPackageName()));
                 ((ToggleButton) view).setBackgroundColor(Color.parseColor("#ffd9d9d9"));
@@ -452,6 +504,7 @@ public class MainActivity extends ActionBarActivity {
                 ((ToggleButton) view).setText(" ");
                 ((ToggleButton) view).setTag(null);
                 ((ToggleButton) view).setChecked(false);
+
 
             }
         }
@@ -479,6 +532,9 @@ public class MainActivity extends ActionBarActivity {
             ((ToggleButton) view).setTextSize(16);
             ((ToggleButton) view).setTextColor(Color.parseColor("#ffff0000"));
             ((ToggleButton) view).setTypeface(null, Typeface.BOLD);
+            ((TextView)findViewById(R.id.Player1)).setBackgroundColor(Color.parseColor("#7fff0000"));
+            ((TextView)findViewById(R.id.Player2)).setBackgroundColor(Color.TRANSPARENT);
+
 
 
         }
@@ -489,6 +545,9 @@ public class MainActivity extends ActionBarActivity {
             ((ToggleButton) view).setTextSize(16);
             ((ToggleButton) view).setTextColor(Color.parseColor("#ff00ff19"));
             ((ToggleButton) view).setTypeface(null, Typeface.BOLD);
+            ((TextView)findViewById(R.id.Player1)).setBackgroundColor(Color.TRANSPARENT);
+            ((TextView)findViewById(R.id.Player2)).setBackgroundColor(Color.parseColor("#7f00ff19"));
+
 
         }
 
